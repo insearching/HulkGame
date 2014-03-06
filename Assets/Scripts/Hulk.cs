@@ -18,8 +18,7 @@ public class Hulk : MonoBehaviour {
 
 	bool jump;
 	float xAxisValue;
-
-
+	
 	void Start () {
 		anim = GetComponent<Animator> ();
 	}
@@ -46,7 +45,7 @@ public class Hulk : MonoBehaviour {
 		xAxisValue = Input.GetAxis("Horizontal");
 		#endif
 
-		anim.SetFloat ("Speed", Mathf.Abs (xAxisValue));
+		//anim.SetFloat ("Speed", Mathf.Abs (xAxisValue));
 		
 		rigidbody2D.velocity = new Vector2 (xAxisValue * maxSpeed, rigidbody2D.velocity.y);
 		
@@ -57,6 +56,11 @@ public class Hulk : MonoBehaviour {
 
 		if (jump) 
 			Jump ();
+	}
+
+	void Move()
+	{
+
 	}
 
 	void Jump(){
